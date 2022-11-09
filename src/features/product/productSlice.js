@@ -10,8 +10,7 @@ export const productSlice = createSlice({
     addToCart: (state, action)=> {
       const itemInCart = state.cart.find(item => item.id === action.payload.id)
       if(itemInCart){
-       itemInCart.quantity ++
-       itemInCart.stock --
+      alert(`You already added ${action.payload.name} to your cart`)
       }else{
         state.cart.push({...action.payload, stock: action.payload.stock - 1, quantity: 1})
       }

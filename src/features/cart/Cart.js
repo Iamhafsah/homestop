@@ -12,6 +12,18 @@ const Cart = () => {
   const cart = useSelector(state => state.productCount.cart)
   const dispatch = useDispatch()
 
+  const getTotal = ()=> {
+    let totalQuantity = 0;
+    let totalAmount = 0;
+
+    cart.forEach(item => {
+      totalQuantity += item.quantity;
+      totalAmount += item.price * item.quantity;
+    })
+
+    return {totalAmount, totalQuantity}
+  }
+
   return (
     <div className='max-w-[90%] mx-auto'>
       <h1 className='font-[600] xl:text-4xl text-3xl py-6 pl-2'>Shopping Cart</h1>
@@ -27,9 +39,9 @@ const Cart = () => {
               </div>
 
               <div className='px-4'>
-                <p className='font-bold max-w-[80%] h-[60px] pt-4 leading-[20px]'>{name}</p>
+                <p className='font-bold max-w-[90%] h-[60px] pt-4 leading-[20px]'>{name}</p>
 
-                <div className='flex justify-between'>
+                <div className='flex justify-between pt-6 lg:pt-0'>
                   <div>
                     <p className='text-[#94a3b8] text-[14px] mb-3'>Price:</p>
                     <p className='font-bold mb-4 '>${price}</p>
@@ -60,9 +72,13 @@ const Cart = () => {
       }
       </div>
 
-      {!cart.length > 0 && <p>😥 You have no item in your cart</p>}
+      {!cart.length > 0 && <p className='font-bold text-xl'>😥 You have no item in your cart</p>}
 
-      {cart.length > 0  && <button className='mt-20 bg-[#14110E]  text-white py-2 px-4 rounded'>Proceed to checkout <ShoppingBagIcon className='h-4 w-6 inline'/> </button>}
+      {cart.length > 0  && <div className='mt-20'>
+        <p className='font-bold text-xl'>Items in cart: {getTotal().totalQuantity}</p>
+        <p className='font-bold text-xl'>Total Amount: ${getTotal().totalAmount}</p>
+        <button className='mt-6 bg-[#14110E]  text-white py-2 px-4 rounded'>Proceed to checkout <ShoppingBagIcon className='h-4 w-6 inline'/> </button>
+      </div>}
     </div>
   )
 }

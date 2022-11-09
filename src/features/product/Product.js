@@ -10,7 +10,7 @@ const Product = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className='bg-[#f8fafc]'>
+    <div className='bg-[#f8fafc] py-12'>
       <FeaturedImage/>
 
       <div className='max-w-[90%] mx-auto border-x'>

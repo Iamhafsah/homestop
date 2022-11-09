@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link} from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import { ShoppingCartIcon, ShoppingBagIcon, UserIcon,HeartIcon} from '@heroicons/react/24/outline'
+import { ShoppingCartIcon, UserIcon,HeartIcon} from '@heroicons/react/24/outline'
 import {HomeModernIcon } from '@heroicons/react/24/solid'
 
 
@@ -30,7 +30,7 @@ const Navigation = () => {
   const cart = useSelector(state => state.productCount.cart)
 
   return (
-    <div className='border-b'>
+    <div className='border-b fixed bg-white w-full z-10'>
       <nav className='flex justify-between items-center max-w-[90%] mx-auto text-[#14110E]'>
         <Link to={'/'}><HomeModernIcon className={iconStyle}/><b>Home</b>stop<b>.</b></Link>
 
