@@ -1,16 +1,17 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import Cart from './features/cart';
-import Product from './features/product/Product';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Cart from "./features/cart";
+import Product from "./features/product/Product";
+import Layout from "./components/layout";
 
 function App() {
   return (
-    <div>
+    <Layout>
       <Routes>
-        <Route exact path="/" element={<Product/>}/>
-        <Route path="/cart" element={<Cart/>}/>
+        <Route exact path="/" element={<Product />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
-    </div>
+    </Layout>
   );
 }
 

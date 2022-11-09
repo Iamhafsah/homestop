@@ -7,7 +7,7 @@ export const mockData = [
     name:"Nature embellished Notebook",
     price:"20",
     stock:"10",
-    image:"https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL.SX325_B01,204,203,200_.jpg"
+    image:"https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
   },
   {
     id:"2",
