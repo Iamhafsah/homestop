@@ -33,17 +33,17 @@ const Checkout = () => {
     <div className='max-w-[90%] mx-auto py-16 min-h-[90vh]'>
       {carted ? (
         <>
-          <h1 className='font-[600] xl:text-4xl lg:text-3xl text-2xl lg:py-10 pt-6 pb-12 '>Thank You for Shopping With Us! We Hope To see You Again. 🤗</h1>
+          <h1 className='font-[600] xl:text-4xl lg:text-3xl text-2xl lg:py-10 pt-6 pb-12 text-center '>Thank You for Shopping With Us! We Hope To see You Again. 🤗</h1>
         </>):
         <>
           <h1 className='font-[600] xl:text-4xl lg:text-3xl text-2xl lg:py-10 pt-6 pb-12 '>Take Your Goodies Home With You 🛍</h1>
 
-          <div className='flex justify-between'>
+          <div className='sm:flex justify-between'>
             <div>
               {cartItems.map((item, index) => (
-                <div key={`${item.name}-${index}`} className="flex mb-4 gap-4 items-center">
-                  <div className='w-[250px] lg:w-[400px]'>
-                    <img src={item.image} alt={item.name} width={100} className="w-[100%] max-h-[300px]"/>
+                <div key={`${item.name}-${index}`} className="md:flex mb-6 gap-4 items-center">
+                  <div className='sm:w-[250px] lg:w-[400px] w-[80vw]'>
+                    <img src={item.image} alt={item.name} width={100} className="w-[100%] max-h-[300px] rounded mb-2"/>
                   </div>
 
                   <div>
@@ -57,7 +57,7 @@ const Checkout = () => {
                 </div>
               ))}
             </div>
-            <div>
+            <div className='mt-12 md:mt-0'>
               <p className=' text-xl pb-1'>Subtotal: ${getTotal().totalAmount}</p>
               <p className='text-xl border-b-2 border-black mb-4 pb-1'>Shipping Fee : $2</p>
               <p className='font-bold text-xl'>Total: ${getTotal().totalAmount + 2}</p>

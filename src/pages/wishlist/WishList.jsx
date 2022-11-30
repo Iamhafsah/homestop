@@ -10,7 +10,7 @@ const WishList = () => {
     <div className='max-w-[90%] mx-auto py-16 min-h-[90vh]'>
        <h1 className='font-[600] xl:text-4xl lg:text-3xl text-2xl lg:py-10 py-6 pl-2'>Wish List ✨ ✍🏼</h1>
 
-      <div className='grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4'>
+      <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4'>
       {wishListCount?.map(item => {
         const {id, name,stock,price,image} = item
 

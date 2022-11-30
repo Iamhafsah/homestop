@@ -32,7 +32,7 @@ const Cart = () => {
     <div className='max-w-[90%] mx-auto py-16 min-h-[90vh]'>
       <h1 className='font-[600] xl:text-4xl lg:text-3xl text-2xl lg:py-10 py-6 pl-2'>Shopping Cart</h1>
 
-      <div className='grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4'>
+      <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4'>
       {
         cart.length > 0 && cart.map(item => {
           const {id, name, quantity, stock,image,price} = item
