@@ -1,1 +1,1 @@
-A shopping app created with React, Redux, and Redux persist
+A shopping app created with React, Redux Toolkit, and Redux persist
