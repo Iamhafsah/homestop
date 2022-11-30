@@ -30,7 +30,7 @@ const Checkout = () => {
   }
 
   return (
-    <div className='max-w-[90%] mx-auto py-16'>
+    <div className='max-w-[90%] mx-auto py-16 min-h-[90vh]'>
       {carted ? (
         <>
           <h1 className='font-[600] xl:text-4xl lg:text-3xl text-2xl lg:py-10 pt-6 pb-12 '>Thank You for Shopping With Us! We Hope To see You Again. 🤗</h1>

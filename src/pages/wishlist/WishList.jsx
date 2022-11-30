@@ -7,7 +7,7 @@ const WishList = () => {
   const dispatch = useDispatch()
 
   return (
-    <div className='max-w-[90%] mx-auto py-16'>
+    <div className='max-w-[90%] mx-auto py-16 min-h-[90vh]'>
        <h1 className='font-[600] xl:text-4xl lg:text-3xl text-2xl lg:py-10 py-6 pl-2'>Wish List ✨ ✍🏼</h1>
 
       <div className='grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4'>

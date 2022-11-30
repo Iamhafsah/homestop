@@ -18,9 +18,9 @@ const Product = () => {
     <div className='bg-[#f8fafc] pt-12'>
       <FeaturedImage/>
 
-      <div className='max-w-[90%] mx-auto border-x'>
+      <div className='max-w-[90%] mx-auto border-x pb-2'>
         <h2 className='font-[600] xl:text-4xl lg:text-3xl text-2xl py-10 pl-2'>Catalog ✨</h2>
-        <div className='grid gap-4 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 pb-8 px-2'>
+        <div className='grid gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pb-8 px-2'>
           {mockData.map(item => {
             const {id,name,price,stock,image} = item
             return (

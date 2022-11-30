@@ -46,7 +46,7 @@ const Navigation = () => {
           <li className={iconWrap}> 
             <Link to='/cart' className='relative'><ShoppingCartIcon className={`${iconStyle} mt-0 mr-1`}/> <span className={cartCount}>{cart.length}</span> Cart</Link>
           </li>
-          <li className={iconWrap}> <UserIcon className={`${iconStyle} mt-0`}/>Hafsah Emekoma</li>
+          <li className={`${iconWrap} hidden md:block`}> <UserIcon className={`${iconStyle} mt-0`}/>Amazing Customer</li>
         </ul>
       </nav>
     </div>
