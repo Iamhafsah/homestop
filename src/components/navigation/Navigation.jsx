@@ -6,11 +6,14 @@ import {HomeModernIcon } from '@heroicons/react/24/solid'
 
 
 const iconWrap =`
-  px-8 py-4
+  md:px-8 
+  px-2
+  py-4
   flex items-center
   gap-1
   font-[550]
-  text-[14px]
+  md:text-[14px]
+  text-[12px]
 `
 const iconStyle = `
   h-5 w-6 inline -mt-1
@@ -28,6 +31,8 @@ const cartCount = `
 
 const Navigation = () => {
   const cart = useSelector(state => state.productCount.cart)
+  const wishList = useSelector(state => state.productCount.wishList)
+
 
   return (
     <div className='border-b fixed bg-white w-full z-10'>
@@ -36,7 +41,7 @@ const Navigation = () => {
 
         <ul className='flex divide-x border-l'>
           <li className={iconWrap}>
-            <Link to='/wishlist' className='relative'><HeartIcon className={`${iconStyle} mr-1`}/> <span className={cartCount}>0</span> Wishlist</Link>
+            <Link to='/wishlist' className='relative'><HeartIcon className={`${iconStyle} mr-1`}/> <span className={cartCount}>{wishList.length}</span> Wishlist</Link>
           </li>
           <li className={iconWrap}> 
             <Link to='/cart' className='relative'><ShoppingCartIcon className={`${iconStyle} mt-0 mr-1`}/> <span className={cartCount}>{cart.length}</span> Cart</Link>

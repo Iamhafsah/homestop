@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import {removeItem, increaseQty,decreaseQty} from "../product/productSlice"
@@ -11,6 +12,8 @@ bg-[#A06448] text-white rounded-full w-6 active:opacity-[.7] pb-[1px] font-bold
 const Cart = () => {
   const cart = useSelector(state => state.productCount.cart)
   const dispatch = useDispatch()
+
+  const navigate = useNavigate()
 
   const getTotal = ()=> {
     let totalQuantity = 0;
@@ -25,17 +28,17 @@ const Cart = () => {
   }
 
   return (
-    <div className='max-w-[90%] mx-auto'>
-      <h1 className='font-[600] xl:text-4xl text-3xl py-6 pl-2'>Shopping Cart</h1>
+    <div className='max-w-[90%] mx-auto py-16'>
+      <h1 className='font-[600] xl:text-4xl lg:text-3xl text-2xl lg:py-10 py-6 pl-2'>Shopping Cart</h1>
 
-      <div className='grid lg:grid-cols-4 grid-cols-3 gap-4'>
+      <div className='grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4'>
       {
         cart.length > 0 && cart.map(item => {
           const {id, name, quantity, stock,image,price} = item
           return (
             <div key={id} className="rounded hover:shadow  pb-4  border justify-center items-center">
-              <div className='h-[150px] w-full border-b flex justify-center items-center'>
-                <img src={image} alt={name} width={100}/>
+              <div className='lg:h-[250px] h-[200px] w-full border-b flex justify-center items-center'>
+                <img src={image} alt={name} width={100} className="w-[100%] h-[100%]"/>
               </div>
 
               <div className='px-4'>
@@ -77,7 +80,7 @@ const Cart = () => {
       {cart.length > 0  && <div className='mt-20'>
         <p className='font-bold text-xl'>Items in cart: {getTotal().totalQuantity}</p>
         <p className='font-bold text-xl'>Total Amount: ${getTotal().totalAmount}</p>
-        <button className='mt-6 bg-[#14110E]  text-white py-2 px-4 rounded'>Proceed to checkout <ShoppingBagIcon className='h-4 w-6 inline'/> </button>
+        <button className='mt-6 bg-[#14110E] text-white py-2 px-4 rounded' onClick={()=>navigate('/checkout')}>Proceed to checkout <ShoppingBagIcon className='h-4 w-6 inline'/> </button>
       </div>}
     </div>
   )
