@@ -10,6 +10,7 @@ const qtyBtnStyle = `
 bg-[#A06448] text-white rounded-full w-6 active:opacity-[.7] pb-[1px] font-bold 
 `
 const Cart = () => {
+  
   const cart = useSelector(state => state.productCount.cart)
   const dispatch = useDispatch()
 
@@ -51,10 +52,9 @@ const Cart = () => {
                   </div>
 
                   <div>
-                    <p className='text-[#94a3b8] text-[14px] mb-3'>Quantity:</p>
+                    <p className='text-[#94a3b8] text-[14px] mb-3 text-right'>Quantity:</p>
                     
                     <button onClick={()=>dispatch(decreaseQty(id))} className={qtyBtnStyle}>-</button>
-
                     <span className='font-bold '> {quantity} </span>
 
                     <button onClick={()=>{
